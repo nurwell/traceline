@@ -1,0 +1,2 @@
+13/May/2026:16:03:04 +0200 "POST /checkout" 504 upstream timed out
+13/May/2026:16:03:09 +0200 "POST /checkout" 502 bad gateway

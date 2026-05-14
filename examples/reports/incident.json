@@ -1,0 +1,79 @@
+[
+  {
+    "id": "57ca2a41f32a6e21",
+    "timestamp": "2026-05-13T14:02:11Z",
+    "source": "deploy",
+    "message": "deploy started version=8f31a2",
+    "file": "examples/logs/deploy.log",
+    "line_number": 1,
+    "level": "unknown",
+    "parser": "space",
+    "redacted": false
+  },
+  {
+    "id": "bcaf498af94e8542",
+    "timestamp": "2026-05-13T14:03:02Z",
+    "source": "app",
+    "message": "ERROR checkout-api payment timeout request_id=req_91",
+    "file": "examples/logs/app.log",
+    "line_number": 1,
+    "level": "error",
+    "parser": "iso",
+    "redacted": false
+  },
+  {
+    "id": "38e93363327f28af",
+    "timestamp": "2026-05-13T14:03:04Z",
+    "source": "nginx",
+    "message": "\"POST /checkout\" 504 upstream timed out",
+    "file": "examples/logs/nginx.log",
+    "line_number": 1,
+    "level": "error",
+    "parser": "nginx",
+    "redacted": false
+  },
+  {
+    "id": "59c3062b4ac746f6",
+    "timestamp": "2026-05-13T14:03:07Z",
+    "source": "app",
+    "message": "ERROR checkout-api database pool exhausted request_id=req_92",
+    "file": "examples/logs/app.log",
+    "line_number": 2,
+    "level": "error",
+    "parser": "iso",
+    "redacted": false
+  },
+  {
+    "id": "dae42283c02f5ca1",
+    "timestamp": "2026-05-13T14:03:09Z",
+    "source": "nginx",
+    "message": "\"POST /checkout\" 502 bad gateway",
+    "file": "examples/logs/nginx.log",
+    "line_number": 2,
+    "level": "error",
+    "parser": "nginx",
+    "redacted": false
+  },
+  {
+    "id": "869d7be12cb93623",
+    "timestamp": "2026-05-13T14:04:30Z",
+    "source": "deploy",
+    "message": "rollback started version=7c21be",
+    "file": "examples/logs/deploy.log",
+    "line_number": 2,
+    "level": "unknown",
+    "parser": "space",
+    "redacted": false
+  },
+  {
+    "id": "4810e542843072a9",
+    "timestamp": "2026-05-13T14:05:10Z",
+    "source": "app",
+    "message": "INFO checkout-api recovered",
+    "file": "examples/logs/app.log",
+    "line_number": 3,
+    "level": "info",
+    "parser": "iso",
+    "redacted": false
+  }
+]

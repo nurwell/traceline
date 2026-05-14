@@ -1,0 +1,3 @@
+2026-05-13T14:03:02Z ERROR checkout-api payment timeout request_id=req_91
+2026-05-13T14:03:07Z ERROR checkout-api database pool exhausted request_id=req_92
+2026-05-13T14:05:10Z INFO checkout-api recovered

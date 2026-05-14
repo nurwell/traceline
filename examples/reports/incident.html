@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TraceLine Incident Timeline</title>
+  <style>
+    body { color: #1f2933; font-family: system-ui, sans-serif; margin: 2rem; }
+    .summary {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 1rem 0 1.5rem;
+    }
+    .summary div {
+      background: #f7f9fb;
+      border: 1px solid #d9e2ec;
+      padding: 0.75rem;
+    }
+    .summary strong { display: block; margin-bottom: 0.25rem; }
+    .notice { color: #52606d; margin-top: 1.25rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 0.45rem; text-align: left; vertical-align: top; }
+    th { background: #f4f4f4; }
+    td:nth-child(5) {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Incident Timeline</h1>
+  <section class="summary">
+    <div><strong>Events</strong>7</div>
+    <div><strong>Sources</strong>app: 3, deploy: 2, nginx: 2</div>
+    <div><strong>Levels</strong>error: 4, info: 1, unknown: 2</div>
+    <div><strong>First Error</strong>2026-05-13 14:03:02 app: ERROR checkout-api payment timeout request_id=req_91</div>
+    <div><strong>Generated UTC</strong>2026-05-14 16:10:40</div>
+  </section>
+  <table>
+    <thead><tr><th>ID</th><th>Time UTC</th><th>Source</th><th>Level</th><th>Event</th></tr></thead>
+    <tbody>
+<tr><td>57ca2a41f32a6e21</td><td>2026-05-13 14:02:11</td><td>deploy</td><td>unknown</td><td>deploy started version=8f31a2</td></tr>
+<tr><td>bcaf498af94e8542</td><td>2026-05-13 14:03:02</td><td>app</td><td>error</td><td>ERROR checkout-api payment timeout request_id=req_91</td></tr>
+<tr><td>38e93363327f28af</td><td>2026-05-13 14:03:04</td><td>nginx</td><td>error</td><td>&quot;POST /checkout&quot; 504 upstream timed out</td></tr>
+<tr><td>59c3062b4ac746f6</td><td>2026-05-13 14:03:07</td><td>app</td><td>error</td><td>ERROR checkout-api database pool exhausted request_id=req_92</td></tr>
+<tr><td>dae42283c02f5ca1</td><td>2026-05-13 14:03:09</td><td>nginx</td><td>error</td><td>&quot;POST /checkout&quot; 502 bad gateway</td></tr>
+<tr><td>869d7be12cb93623</td><td>2026-05-13 14:04:30</td><td>deploy</td><td>unknown</td><td>rollback started version=7c21be</td></tr>
+<tr><td>4810e542843072a9</td><td>2026-05-13 14:05:10</td><td>app</td><td>info</td><td>INFO checkout-api recovered</td></tr>
+    </tbody>
+  </table>
+  <p class="notice">
+    Generated locally by TraceLine. Secret redaction is best-effort; review before sharing.
+  </p>
+</body>
+</html>
