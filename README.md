@@ -71,26 +71,26 @@ dae42283c02f5ca1  2026-05-13 14:03:09  nginx      error   "POST /checkout" 502 b
 4810e542843072a9  2026-05-13 14:05:10  app        info    INFO checkout-api recovered
 ```
 
-## Install Locally
+## Run Locally
 
-From this repository, without downloading anything new:
+From this repository checkout, use the existing local environment:
 
 ```bash
-uv run traceline --help
 uv run tl --help
+uv run tl examples/logs -o incident.html
 ```
 
-To install the local checkout as a command:
+To install the checkout as local commands:
 
 ```bash
 pipx install .
 tl --help
 ```
 
-If `pipx` is not available, keep using:
+After that, use:
 
 ```bash
-uv run tl app.log nginx.log
+tl app.log nginx.log -o incident.html
 ```
 
 ## Why Use It
