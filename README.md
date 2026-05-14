@@ -71,26 +71,24 @@ dae42283c02f5ca1  2026-05-13 14:03:09  nginx      error   "POST /checkout" 502 b
 4810e542843072a9  2026-05-13 14:05:10  app        info    INFO checkout-api recovered
 ```
 
-## Run Locally
+## Install
 
-From this repository checkout, use the existing local environment:
+Install from GitHub:
 
 ```bash
-uv run tl --help
-uv run tl examples/logs -o incident.html
+pipx install git+https://github.com/nurwell/traceline.git
 ```
 
-To install the checkout as local commands:
+Or from a local checkout:
 
 ```bash
 pipx install .
-tl --help
 ```
 
-After that, use:
+Then run:
 
 ```bash
-tl app.log nginx.log -o incident.html
+tl logs -o incident.html
 ```
 
 ## Why Use It
@@ -210,9 +208,10 @@ Redaction is a safety layer, not a guarantee. Review reports before sharing.
 
 ## Development
 
-No network is required for normal local checks once dependencies are present:
+For contributors working from the repository:
 
 ```bash
+uv run tl examples/logs -o incident.html
 uv run pytest
 uv run ruff check .
 uv build
