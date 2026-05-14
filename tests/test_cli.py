@@ -1,8 +1,15 @@
+import re
 from pathlib import Path
 
 from typer.testing import CliRunner
 
 from traceline.cli import app
+
+ANSI_PATTERN = re.compile(r"\x1b\[[0-9;]*m")
+
+
+def clean_output(output: str) -> str:
+    return ANSI_PATTERN.sub("", output)
 
 
 def test_cli_ingests_and_exports_json(tmp_path: Path) -> None:
@@ -49,7 +56,7 @@ def test_cli_clear_requires_confirmation(tmp_path: Path) -> None:
     result = runner.invoke(app, ["clear", "--store", str(store)])
 
     assert result.exit_code != 0
-    assert "without --yes" in result.output
+    assert "without --yes" in clean_output(result.output)
 
 
 def test_cli_ingests_from_stdin(tmp_path: Path) -> None:
@@ -171,7 +178,7 @@ def test_cli_analyze_rejects_mismatched_sources(tmp_path: Path) -> None:
     )
 
     assert result.exit_code != 0
-    assert "--source per file" in result.output
+    assert "--source per file" in clean_output(result.output)
 
 
 def test_cli_add_suggests_diagnose_when_lines_are_skipped(tmp_path: Path) -> None:
